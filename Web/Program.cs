@@ -32,6 +32,7 @@ namespace Web
                 Console.WriteLine("Press Enter to quit.");
                 Console.ReadLine();
             }
+            Console.WriteLine("Buka");
         }
 
         private static StandardKernel CreateKernel()
