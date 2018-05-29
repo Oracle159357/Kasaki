@@ -12,7 +12,7 @@ namespace BLL
     {
         public override void Load()
         {
-            this.Bind<IUnitOfWork>().To<UnitOfWork>();
+          //  this.Bind<IUnitOfWork>().To<UnitOfWork>();
         }
     }
 }

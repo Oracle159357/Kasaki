@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using BLL.Entities;
+using BLL.PresentationClasses;
 using Kasaki.Entities;
 
 
@@ -11,13 +11,14 @@ namespace BLL
         {
             Mapper.Initialize(cfg =>
             {
-                cfg.CreateMap<Departament1, Departament>();
-                cfg.CreateMap<Group1, Group>();
-                cfg.CreateMap<Room1, Room>();
-                cfg.CreateMap<Subject1, Subject>();
-                cfg.CreateMap<Lecture1, Lecture>();
-                cfg.CreateMap<Teacher1, Teacher>();
-                cfg.CreateMap<User1, User>();
+                cfg.CreateMap<Departament, DepartamentEntity>();
+                cfg.CreateMap<DepartamentEntity, Departament>();
+                cfg.CreateMap<GroupEntity, Group>();
+                cfg.CreateMap<RoomEntity, Room>();
+                cfg.CreateMap<SubjectEntity, Subject>();
+                cfg.CreateMap<LectureEntity, Lecture>();
+                cfg.CreateMap<TeacherEntity, Teacher>();
+                cfg.CreateMap<UserEntity, User>();
             });
 
         }

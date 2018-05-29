@@ -1,8 +1,10 @@
-﻿namespace BLL.Entities
+﻿namespace BLL.PresentationClasses
 {
     public class Lecture
     {
         public int LctPk { get; set; }
+
+
 
         public string Day { get; set; }
         public int Week { get; set; }

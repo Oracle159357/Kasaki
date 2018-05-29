@@ -20,10 +20,19 @@ namespace Web.Controllers
            // this.room = room;
         }
         [Route("a123/{id}")]
+        [HttpGet]
         public int Get(int id)
         {
            // room.Num = 10;
             return id;
+        }
+        [Route("")]
+        [HttpGet]
+
+        public string Get1()
+        {
+            // room.Num = 10;
+            return "buka";
         }
     }
 

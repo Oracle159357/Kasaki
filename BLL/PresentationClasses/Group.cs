@@ -1,4 +1,4 @@
-﻿namespace BLL.Entities
+﻿namespace BLL.PresentationClasses
 {
     public class Group
     {

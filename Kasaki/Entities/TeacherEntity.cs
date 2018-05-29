@@ -8,18 +8,23 @@ using System.Threading.Tasks;
 
 namespace Kasaki.Entities
 {
-   public class Teacher1
+   public class TeacherEntity
     {
         [Key]
         [Required]
         public int TchPk { get; set; }
-        public Departament1 Departament { get; set; }
+
+       
+
+        public int DepartamentId { get; set; }
+        //[ForeignKey("DepartamentId")]
+        public virtual DepartamentEntity DepartamentEntity { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
         public string Surname { get; set; }
         [Required]
         public string Patronymic { get; set; }
-        public ICollection<Lecture1> Lectures { get; set; }
+        public virtual ICollection<LectureEntity> Lectures { get; set; }
     }
 }

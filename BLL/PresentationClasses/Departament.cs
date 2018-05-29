@@ -1,4 +1,4 @@
-﻿namespace BLL.Entities
+﻿namespace BLL.PresentationClasses
 {
     public class Departament
     {
@@ -7,7 +7,5 @@
         public string Name { get; set; }
 
         public string Building { get; set; }
-
-
     }
 }

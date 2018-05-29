@@ -7,13 +7,12 @@ namespace Kasaki
     {
         private readonly RozkladContext _db;
 
-        public UnitOfWork(RozkladContext db, ContextRepository<User1> userRepository,
-            ContextRepository<Departament1> departamentRepository, ContextRepository<Group1> groupRepository,
-            ContextRepository<Lecture1> lectureRepository, ContextRepository<Room1> roomRepository,
-            ContextRepository<Subject1> subjectRepository, ContextRepository<Teacher1> teacherRepository)
+        public UnitOfWork(RozkladContext db, ContextRepository<UserEntity> userRepository,
+            ContextRepository<DepartamentEntity> departamentRepository, ContextRepository<GroupEntity> groupRepository,
+            ContextRepository<LectureEntity> lectureRepository, ContextRepository<RoomEntity> roomRepository,
+            ContextRepository<SubjectEntity> subjectRepository, ContextRepository<TeacherEntity> teacherRepository)
         {
             _db = db;
-
             Users = userRepository;
             Departaments = departamentRepository;
             Groups = groupRepository;
@@ -23,20 +22,19 @@ namespace Kasaki
             Teachers = teacherRepository;
         }
 
-        public ContextRepository<User1> Users { get; }
+        public ContextRepository<UserEntity> Users { get; }
 
-        public ContextRepository<Departament1> Departaments { get; }
+        public ContextRepository<DepartamentEntity> Departaments { get; }
 
-        public ContextRepository<Group1> Groups { get; }
+        public ContextRepository<GroupEntity> Groups { get; }
 
-        public ContextRepository<Lecture1> Lectures { get; }
+        public ContextRepository<LectureEntity> Lectures { get; }
 
-        public ContextRepository<Room1> Rooms { get; }
+        public ContextRepository<RoomEntity> Rooms { get; }
 
-        public ContextRepository<Subject1> Subjects { get; }
+        public ContextRepository<SubjectEntity> Subjects { get; }
 
-        public ContextRepository<Teacher1> Teachers { get; }
-
+        public ContextRepository<TeacherEntity> Teachers { get; }
 
         public void Save()
         {

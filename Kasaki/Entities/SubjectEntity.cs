@@ -7,16 +7,14 @@ using System.Threading.Tasks;
 
 namespace Kasaki.Entities
 {
-    public class Room1
+    public class SubjectEntity
     {
         [Key]
-        public int RomPk { get; set; }
         [Required]
-        public int Num { get; set; }
+        public int SbjPk { get; set; }
+        [MaxLength(50)]
         [Required]
-        public string Building { get; set; }
+        public string Name { get; set; }
 
-     //   public Subject Disciplene { get; set; }
-     //   public DBTeacher Teacher { get; set; }
     }
 }

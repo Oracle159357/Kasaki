@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Linq.Expressions;
 using Kasaki.Entities;
+
 
 namespace Kasaki
 {
     public sealed class ContextRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
-        private readonly RozkladContext _context;
-        private readonly DbSet<TEntity> _dbSet;
+        private  RozkladContext _context;
+        private  DbSet<TEntity> _dbSet;
 
         public ContextRepository(RozkladContext context)
         {
@@ -34,19 +36,46 @@ namespace Kasaki
         public TEntity FindById(int id)
         {
             return _dbSet.Find(id);
+            
         }
 
-        public void Create(TEntity item)
+        public  void Create(TEntity item)
         {
             _dbSet.Add(item);
+            try
+            {
+
+                _context.SaveChanges();
+
+            }
+            catch (Exception exception)
+            {
+
+                var x = 5;
+            }
+            //_context.SaveChanges();
         }
         public void Update(TEntity item)
         {
             _context.Entry(item).State = EntityState.Modified;
+            _context.SaveChanges();
         }
-        public void Remove(TEntity item)
+
+      //  public void Remove(TEntity item)
+      //  {
+      //      _dbSet.Remove(item);
+            
+      ////      GC.SuppressFinalize(_dbSet);
+      //      _context.DeleteObject(_dbSet);
+      //      _context.SaveChanges();
+      //  }
+        public void Remove(TEntity entity)
         {
-            _dbSet.Remove(item);
+            // Настройки контекста
+            _context.Database.Log = (s => System.Diagnostics.Debug.WriteLine(s));
+            
+            _context.Entry<TEntity>(entity).State = EntityState.Deleted;
+            _context.SaveChanges();
         }
         public IEnumerable<TEntity> GetWithInclude(params Expression<Func<TEntity, object>>[] includeProperties)
         {
