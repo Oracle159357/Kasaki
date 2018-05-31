@@ -21,7 +21,7 @@ namespace Web.Controllers
         [Route("")]
         public IEnumerable<Lecture> GetLectures()
         {
-            _basicOperationLecture.AddLecture(new Lecture{Day="23",GroupId = 6, RoomId = 1, Week = 2, SubjectId = 1, TeacherId = 6, Lesson = 3});
+            //_basicOperationLecture.AddLecture(new Lecture{Day="23",GroupId = 6, RoomId = 1, Week = 2, SubjectId = 1, TeacherId = 6, Lesson = 3});
             return _basicOperationLecture.GetLecture();
         }
 
@@ -36,8 +36,8 @@ namespace Web.Controllers
         [Route("")]
         public IHttpActionResult Put([FromBody]Lecture lecture)
         {
-            if (string.IsNullOrWhiteSpace(lecture.Day))
-                return BadRequest("Please, correct inputs");
+            //if (string.IsNullOrWhiteSpace(lecture.Day))
+            //    return BadRequest("Please, correct inputs");
             _basicOperationLecture.AddLecture(lecture);
             return Ok();
         }

@@ -21,8 +21,8 @@ namespace Web.Controllers
         [Route("")]
         public IEnumerable<Room> GetRooms()
         {
-            _basicOperationRoom.AddRoom(new Room{Building = "saddas", Num = 3});
-            _basicOperationRoom.AddRoom(new Room { Building = "saddas", Num = 4 });
+          //  _basicOperationRoom.AddRoom(new Room{Building = "saddas", Num = 3});
+         //   _basicOperationRoom.AddRoom(new Room { Building = "saddas", Num = 4 });
             return _basicOperationRoom.GetRoom();
         }
 
@@ -37,8 +37,8 @@ namespace Web.Controllers
         [Route("")]
         public IHttpActionResult Put([FromBody]Room room)
         {
-            if (string.IsNullOrWhiteSpace(room.Building) || !room.Building.All(char.IsDigit))
-                return BadRequest("Please, correct inputs");
+            //if (string.IsNullOrWhiteSpace(room.Building) || !room.Building.All(char.IsDigit))
+            //    return BadRequest("Please, correct inputs");
             _basicOperationRoom.AddRoom(room);
             return Ok();
         }
@@ -47,8 +47,8 @@ namespace Web.Controllers
         [Route("")]
         public IHttpActionResult Post([FromBody]Room room)
         {
-            if (string.IsNullOrWhiteSpace(room.Building) || !room.Building.All(char.IsDigit))
-                return BadRequest("Invalid data");
+          //  if (string.IsNullOrWhiteSpace(room.Building) || !room.Building.All(char.IsDigit))
+          //      return BadRequest("Invalid data");
             _basicOperationRoom.ChangeRoom(room);
             return Ok();
         }

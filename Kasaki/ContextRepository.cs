@@ -58,7 +58,17 @@ namespace Kasaki
         public void Update(TEntity item)
         {
             _context.Entry(item).State = EntityState.Modified;
-            _context.SaveChanges();
+            try
+            {
+
+                _context.SaveChanges();
+
+            }
+            catch (Exception exception)
+            {
+
+                var x = 5;
+            }
         }
 
       //  public void Remove(TEntity item)

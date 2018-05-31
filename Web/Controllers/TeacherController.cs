@@ -35,9 +35,9 @@ namespace Web.Controllers
         [Route("")]
         public IHttpActionResult Put([FromBody]Teacher teacher)
         {
-            if (string.IsNullOrWhiteSpace(teacher.Name) || string.IsNullOrWhiteSpace(teacher.Surname) ||
-                string.IsNullOrWhiteSpace(teacher.Patronymic))
-                return BadRequest("Please, correct inputs");
+            //if (string.IsNullOrWhiteSpace(teacher.Name) || string.IsNullOrWhiteSpace(teacher.Surname) ||
+            //    string.IsNullOrWhiteSpace(teacher.Patronymic))
+            //    return BadRequest("Please, correct inputs");
             _basicOperationTeacher.AddTeacher(teacher);
             return Ok();
         }
@@ -46,9 +46,9 @@ namespace Web.Controllers
         [Route("")]
         public IHttpActionResult Post([FromBody]Teacher teacher)
         {
-            if (string.IsNullOrWhiteSpace(teacher.Name) || string.IsNullOrWhiteSpace(teacher.Surname) ||
-                string.IsNullOrWhiteSpace(teacher.Patronymic))
-                return BadRequest("Invalid data");
+            //if (string.IsNullOrWhiteSpace(teacher.Name) || string.IsNullOrWhiteSpace(teacher.Surname) ||
+            //    string.IsNullOrWhiteSpace(teacher.Patronymic))
+            //    return BadRequest("Invalid data");
             _basicOperationTeacher.ChangeTeacher(teacher);
             return Ok();
         }

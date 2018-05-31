@@ -43,8 +43,8 @@ namespace Web.Controllers
         [Route("")]
         public IHttpActionResult Post([FromBody]Group group)
         {
-            if (group.GrpPk > 0 || group.DepartamentId > 0)
-                return BadRequest("Invalid data");
+            //if (group.GrpPk > 0 || group.DepartamentId > 0)
+            //    return BadRequest("Invalid data");
             _basicOperationGroup.ChangeGroup(group);
             return Ok();
         }

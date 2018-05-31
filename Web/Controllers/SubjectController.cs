@@ -23,9 +23,9 @@ namespace Web.Controllers
         public IEnumerable<Subject> GetSubjects()
         {
             
-            _basicOperationSubject.AddSubject(new Subject{Name = "saddask"});
-            _basicOperationSubject.AddSubject(new Subject { Name = "saddasfj" });
-            _basicOperationSubject.AddSubject(new Subject { Name = "saddasassad" });
+            //_basicOperationSubject.AddSubject(new Subject{Name = "saddask"});
+            //_basicOperationSubject.AddSubject(new Subject { Name = "saddasfj" });
+            //_basicOperationSubject.AddSubject(new Subject { Name = "saddasassad" });
             return _basicOperationSubject.GetSubject();
         }
 
@@ -40,8 +40,8 @@ namespace Web.Controllers
         [Route("")]
         public IHttpActionResult Put([FromBody]Subject subject)
         {
-            if (string.IsNullOrWhiteSpace(subject.Name))
-                return BadRequest("Please, correct inputs");
+            //if (string.IsNullOrWhiteSpace(subject.Name))
+            //    return BadRequest("Please, correct inputs");
             _basicOperationSubject.AddSubject(subject);
             return Ok();
         }
@@ -50,8 +50,8 @@ namespace Web.Controllers
         [Route("")]
         public IHttpActionResult Post([FromBody]Subject subject)
         {
-            if (string.IsNullOrWhiteSpace(subject.Name))
-                return BadRequest("Invalid data");
+            //if (string.IsNullOrWhiteSpace(subject.Name))
+            //    return BadRequest("Invalid data");
             _basicOperationSubject.ChangeSubject(subject);
             return Ok();
         }
